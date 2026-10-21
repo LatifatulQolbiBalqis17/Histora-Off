@@ -1,0 +1,437 @@
+[
+  {
+    "id": "cap_id",
+    "category": "Ibu Kota",
+    "countryId": "id",
+    "text": "Apa ibu kota Indonesia?",
+    "options": [
+      "Paris",
+      "Jakarta",
+      "Kairo",
+      "Tokyo"
+    ],
+    "answer": "Jakarta",
+    "explanation": "Ibu kota Indonesia adalah Jakarta.",
+    "image": ""
+  },
+  {
+    "id": "flag_id",
+    "category": "Bendera",
+    "countryId": "id",
+    "text": "Bendera negara manakah ini?",
+    "options": [
+      "Prancis",
+      "Indonesia",
+      "Jepang",
+      "Mesir"
+    ],
+    "answer": "Indonesia",
+    "explanation": "Bendera tersebut adalah bendera Indonesia.",
+    "image": "assets/images/flags/id.webp"
+  },
+  {
+    "id": "cap_jp",
+    "category": "Ibu Kota",
+    "countryId": "jp",
+    "text": "Apa ibu kota Jepang?",
+    "options": [
+      "Jakarta",
+      "Paris",
+      "Kairo",
+      "Tokyo"
+    ],
+    "answer": "Tokyo",
+    "explanation": "Ibu kota Jepang adalah Tokyo.",
+    "image": ""
+  },
+  {
+    "id": "flag_jp",
+    "category": "Bendera",
+    "countryId": "jp",
+    "text": "Bendera negara manakah ini?",
+    "options": [
+      "Jepang",
+      "Indonesia",
+      "Prancis",
+      "Mesir"
+    ],
+    "answer": "Jepang",
+    "explanation": "Bendera tersebut adalah bendera Jepang.",
+    "image": "assets/images/flags/jp.webp"
+  },
+  {
+    "id": "cap_fr",
+    "category": "Ibu Kota",
+    "countryId": "fr",
+    "text": "Apa ibu kota Prancis?",
+    "options": [
+      "Tokyo",
+      "Jakarta",
+      "Kairo",
+      "Paris"
+    ],
+    "answer": "Paris",
+    "explanation": "Ibu kota Prancis adalah Paris.",
+    "image": ""
+  },
+  {
+    "id": "flag_fr",
+    "category": "Bendera",
+    "countryId": "fr",
+    "text": "Bendera negara manakah ini?",
+    "options": [
+      "Indonesia",
+      "Mesir",
+      "Prancis",
+      "Jepang"
+    ],
+    "answer": "Prancis",
+    "explanation": "Bendera tersebut adalah bendera Prancis.",
+    "image": "assets/images/flags/fr.webp"
+  },
+  {
+    "id": "cap_eg",
+    "category": "Ibu Kota",
+    "countryId": "eg",
+    "text": "Apa ibu kota Mesir?",
+    "options": [
+      "Jakarta",
+      "Paris",
+      "Kairo",
+      "Tokyo"
+    ],
+    "answer": "Kairo",
+    "explanation": "Ibu kota Mesir adalah Kairo.",
+    "image": ""
+  },
+  {
+    "id": "flag_eg",
+    "category": "Bendera",
+    "countryId": "eg",
+    "text": "Bendera negara manakah ini?",
+    "options": [
+      "Prancis",
+      "Mesir",
+      "Indonesia",
+      "Jepang"
+    ],
+    "answer": "Mesir",
+    "explanation": "Bendera tersebut adalah bendera Mesir.",
+    "image": "assets/images/flags/eg.webp"
+  },
+  {
+    "id": "cap_us",
+    "category": "Ibu Kota",
+    "countryId": "us",
+    "text": "Apa ibu kota Amerika Serikat?",
+    "options": [
+      "Washington, D.C.",
+      "Tokyo",
+      "Paris",
+      "Jakarta"
+    ],
+    "answer": "Washington, D.C.",
+    "explanation": "Ibu kota Amerika Serikat adalah Washington, D.C..",
+    "image": ""
+  },
+  {
+    "id": "flag_us",
+    "category": "Bendera",
+    "countryId": "us",
+    "text": "Bendera negara manakah ini?",
+    "options": [
+      "Prancis",
+      "Indonesia",
+      "Amerika Serikat",
+      "Jepang"
+    ],
+    "answer": "Amerika Serikat",
+    "explanation": "Bendera tersebut adalah bendera Amerika Serikat.",
+    "image": "assets/images/flags/us.webp"
+  },
+  {
+    "id": "cap_br",
+    "category": "Ibu Kota",
+    "countryId": "br",
+    "text": "Apa ibu kota Brasil?",
+    "options": [
+      "Jakarta",
+      "Brasília",
+      "Tokyo",
+      "Paris"
+    ],
+    "answer": "Brasília",
+    "explanation": "Ibu kota Brasil adalah Brasília.",
+    "image": ""
+  },
+  {
+    "id": "flag_br",
+    "category": "Bendera",
+    "countryId": "br",
+    "text": "Bendera negara manakah ini?",
+    "options": [
+      "Jepang",
+      "Prancis",
+      "Brasil",
+      "Indonesia"
+    ],
+    "answer": "Brasil",
+    "explanation": "Bendera tersebut adalah bendera Brasil.",
+    "image": "assets/images/flags/br.webp"
+  },
+  {
+    "id": "cap_au",
+    "category": "Ibu Kota",
+    "countryId": "au",
+    "text": "Apa ibu kota Australia?",
+    "options": [
+      "Paris",
+      "Jakarta",
+      "Canberra",
+      "Tokyo"
+    ],
+    "answer": "Canberra",
+    "explanation": "Ibu kota Australia adalah Canberra.",
+    "image": ""
+  },
+  {
+    "id": "flag_au",
+    "category": "Bendera",
+    "countryId": "au",
+    "text": "Bendera negara manakah ini?",
+    "options": [
+      "Prancis",
+      "Jepang",
+      "Indonesia",
+      "Australia"
+    ],
+    "answer": "Australia",
+    "explanation": "Bendera tersebut adalah bendera Australia.",
+    "image": "assets/images/flags/au.webp"
+  },
+  {
+    "id": "cap_aq",
+    "category": "Ibu Kota",
+    "countryId": "aq",
+    "text": "Apa ibu kota Antartika?",
+    "options": [
+      "Tidak ada",
+      "Tokyo",
+      "Paris",
+      "Jakarta"
+    ],
+    "answer": "Tidak ada",
+    "explanation": "Ibu kota Antartika adalah Tidak ada.",
+    "image": ""
+  },
+  {
+    "id": "flag_aq",
+    "category": "Bendera",
+    "countryId": "aq",
+    "text": "Bendera negara manakah ini?",
+    "options": [
+      "Antartika",
+      "Prancis",
+      "Indonesia",
+      "Jepang"
+    ],
+    "answer": "Antartika",
+    "explanation": "Bendera tersebut adalah bendera Antartika.",
+    "image": "assets/images/flags/aq.webp"
+  },
+  {
+    "id": "desc_id",
+    "category": "Deskripsi",
+    "countryId": "id",
+    "text": "Negara kepulauan di Asia Tenggara dengan lebih dari 17.000 pulau.",
+    "options": [
+      "Prancis",
+      "Mesir",
+      "Indonesia",
+      "Jepang"
+    ],
+    "answer": "Indonesia",
+    "explanation": "Petunjuk tersebut merujuk pada Indonesia.",
+    "image": ""
+  },
+  {
+    "id": "desc_jp",
+    "category": "Deskripsi",
+    "countryId": "jp",
+    "text": "Negara Asia Timur yang dikenal dengan sakura dan Shinkansen.",
+    "options": [
+      "Indonesia",
+      "Mesir",
+      "Jepang",
+      "Prancis"
+    ],
+    "answer": "Jepang",
+    "explanation": "Petunjuk tersebut merujuk pada Jepang.",
+    "image": ""
+  },
+  {
+    "id": "desc_fr",
+    "category": "Deskripsi",
+    "countryId": "fr",
+    "text": "Negara Eropa dengan ibu kota Paris dan Menara Eiffel.",
+    "options": [
+      "Mesir",
+      "Jepang",
+      "Indonesia",
+      "Prancis"
+    ],
+    "answer": "Prancis",
+    "explanation": "Petunjuk tersebut merujuk pada Prancis.",
+    "image": ""
+  },
+  {
+    "id": "desc_eg",
+    "category": "Deskripsi",
+    "countryId": "eg",
+    "text": "Negara Afrika yang peradabannya berkembang di Sungai Nil.",
+    "options": [
+      "Mesir",
+      "Indonesia",
+      "Jepang",
+      "Prancis"
+    ],
+    "answer": "Mesir",
+    "explanation": "Petunjuk tersebut merujuk pada Mesir.",
+    "image": ""
+  },
+  {
+    "id": "desc_br",
+    "category": "Deskripsi",
+    "countryId": "br",
+    "text": "Negara terbesar di Amerika Selatan dan rumah bagi Amazon.",
+    "options": [
+      "Prancis",
+      "Brasil",
+      "Jepang",
+      "Indonesia"
+    ],
+    "answer": "Brasil",
+    "explanation": "Petunjuk tersebut merujuk pada Brasil.",
+    "image": ""
+  },
+  {
+    "id": "desc_au",
+    "category": "Deskripsi",
+    "countryId": "au",
+    "text": "Negara sekaligus benua dengan banyak satwa endemik.",
+    "options": [
+      "Jepang",
+      "Prancis",
+      "Indonesia",
+      "Australia"
+    ],
+    "answer": "Australia",
+    "explanation": "Petunjuk tersebut merujuk pada Australia.",
+    "image": ""
+  },
+  {
+    "id": "place_id",
+    "category": "Tempat Terkenal",
+    "countryId": "id",
+    "text": "Candi Borobudur berada di negara mana?",
+    "options": [
+      "Prancis",
+      "Indonesia",
+      "Jepang",
+      "Mesir"
+    ],
+    "answer": "Indonesia",
+    "explanation": "Candi Borobudur berada di Indonesia.",
+    "image": ""
+  },
+  {
+    "id": "place_jp",
+    "category": "Tempat Terkenal",
+    "countryId": "jp",
+    "text": "Gunung Fuji berada di negara mana?",
+    "options": [
+      "Jepang",
+      "Mesir",
+      "Indonesia",
+      "Prancis"
+    ],
+    "answer": "Jepang",
+    "explanation": "Gunung Fuji berada di Jepang.",
+    "image": ""
+  },
+  {
+    "id": "place_fr",
+    "category": "Tempat Terkenal",
+    "countryId": "fr",
+    "text": "Menara Eiffel berada di negara mana?",
+    "options": [
+      "Jepang",
+      "Prancis",
+      "Mesir",
+      "Indonesia"
+    ],
+    "answer": "Prancis",
+    "explanation": "Menara Eiffel berada di Prancis.",
+    "image": ""
+  },
+  {
+    "id": "place_eg",
+    "category": "Tempat Terkenal",
+    "countryId": "eg",
+    "text": "Piramida Giza berada di negara mana?",
+    "options": [
+      "Indonesia",
+      "Prancis",
+      "Jepang",
+      "Mesir"
+    ],
+    "answer": "Mesir",
+    "explanation": "Piramida Giza berada di Mesir.",
+    "image": ""
+  },
+  {
+    "id": "place_us",
+    "category": "Tempat Terkenal",
+    "countryId": "us",
+    "text": "Patung Liberty berada di negara mana?",
+    "options": [
+      "Indonesia",
+      "Amerika Serikat",
+      "Prancis",
+      "Jepang"
+    ],
+    "answer": "Amerika Serikat",
+    "explanation": "Patung Liberty berada di Amerika Serikat.",
+    "image": ""
+  },
+  {
+    "id": "place_br",
+    "category": "Tempat Terkenal",
+    "countryId": "br",
+    "text": "Cristo Redentor berada di negara mana?",
+    "options": [
+      "Jepang",
+      "Prancis",
+      "Indonesia",
+      "Brasil"
+    ],
+    "answer": "Brasil",
+    "explanation": "Cristo Redentor berada di Brasil.",
+    "image": ""
+  },
+  {
+    "id": "place_au",
+    "category": "Tempat Terkenal",
+    "countryId": "au",
+    "text": "Sydney Opera House berada di negara mana?",
+    "options": [
+      "Prancis",
+      "Australia",
+      "Indonesia",
+      "Jepang"
+    ],
+    "answer": "Australia",
+    "explanation": "Sydney Opera House berada di Australia.",
+    "image": ""
+  }
+]
