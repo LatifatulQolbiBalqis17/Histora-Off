@@ -1,8 +1,8 @@
 # AI_DECLARATION.md
 
 **Mata Kuliah:** Mobile Programming — UTS
-**Nama:** [Latifatul Qolbi Balqis]
-**NIM:** [2413025069]
+**Nama:** [Latifatul Qolbi Balqis, Khirani Nur Azizah, Nabila Fatma Sari]
+**NIM:** [2413025069, 2413025039, 2453025003]
 **Aplikasi:** Histora World (Flutter)
 
 > Dokumen ini menyatakan secara transparan bagaimana alat bantu AI dipakai. Saya bertanggung jawab penuh atas kebenaran, pemahaman, dan keamanan seluruh kode di repositori ini.
