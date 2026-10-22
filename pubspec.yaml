@@ -29,3 +29,10 @@ flutter:
     - assets/images/places/
     - assets/images/foods/
     - assets/images/globe/
+    - assets/images/quiz/
+  fonts:
+    - family: Cinzel
+      fonts:
+        - asset: assets/fonts/Cinzel-Regular.ttf
+        - asset: assets/fonts/Cinzel-Bold.ttf
+          weight: 700

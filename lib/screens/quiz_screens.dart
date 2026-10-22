@@ -7,7 +7,8 @@ import '../data/models.dart';
 import '../state/app_state.dart';
 import '../widgets/common.dart';
 import 'country_detail.dart';
-
+import '../data/flag_index.dart';
+import '../data/places_index.dart';
 const cats = [
   ('Bendera', Icons.flag_outlined, 'Kenali negara dari benderanya.'),
   ('Ibu Kota', Icons.location_city_outlined, 'Pilih ibu kota yang tepat.'),
@@ -20,6 +21,39 @@ const cats = [
   ('Gabungan', Icons.shuffle, 'Campuran seluruh kategori.'),
 ];
 
+const catImages = {
+  'Bendera': 'assets/images/quiz/bendera.jpg',
+  'Ibu Kota': 'assets/images/quiz/ibukota.jpg',
+  'Deskripsi': 'assets/images/quiz/deskripsi.jpg',
+  'Tempat Terkenal': 'assets/images/quiz/tempat.jpg',
+  'Gabungan': 'assets/images/quiz/gabungan.jpg',
+};
+
+class _CatPhoto extends StatelessWidget {
+  const _CatPhoto({required this.path, required this.icon});
+  final String? path;
+  final IconData icon;
+
+  @override
+  Widget build(BuildContext c) {
+    final fallback = CircleAvatar(
+      radius: 26,
+      backgroundColor: Theme.of(c).colorScheme.primary,
+      child: Icon(icon, color: Theme.of(c).colorScheme.secondary),
+    );
+    if (path == null) return fallback;
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(14),
+      child: Image.asset(
+        path!,
+        width: 56,
+        height: 56,
+        fit: BoxFit.cover,
+        errorBuilder: (_, __, ___) => fallback,
+      ),
+    );
+  }
+}
 class QuizCategoriesScreen extends StatelessWidget {
   const QuizCategoriesScreen({super.key});
   @override
@@ -45,11 +79,7 @@ class QuizCategoriesScreen extends StatelessWidget {
           return Card(
             child: ListTile(
               contentPadding: const EdgeInsets.all(14),
-              leading: CircleAvatar(
-                radius: 26,
-                backgroundColor: Theme.of(c).colorScheme.primary,
-                child: Icon(x.$2, color: Theme.of(c).colorScheme.secondary),
-              ),
+              leading: _CatPhoto(path: catImages[x.$1], icon: x.$2),
               title: Text(x.$1, style: Theme.of(c).textTheme.titleLarge),
               subtitle: Text('${x.$3}\nSkor terbaik: $best'),
               isThreeLine: true,
@@ -346,7 +376,31 @@ class _QuizPlayScreenState extends State<QuizPlayScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  if (q.image.isNotEmpty) AssetPicture(q.image),
+                                   if (q.image.isNotEmpty)
+                    q.category == 'Bendera'
+                        ? Container(
+                            height: 190,
+                            width: double.infinity,
+                            padding: const EdgeInsets.all(16),
+                            color: Theme.of(c)
+                                .colorScheme
+                                .primary
+                                .withValues(alpha: .08),
+                            child: Image.asset(
+                              FlagIndex.resolve(q.image),
+                              fit: BoxFit.contain,
+                              errorBuilder: (_, __, ___) => Icon(
+                                Icons.flag_outlined,
+                                size: 48,
+                                color: Theme.of(c).colorScheme.primary,
+                              ),
+                            ),
+                          )
+                        : AssetPicture(q.image),
+                                          if (q.image.isEmpty &&
+                      q.category == 'Tempat Terkenal' &&
+                      PlaceIndex.photoFor(q.countryId) != null)
+                    AssetPicture(PlaceIndex.photoFor(q.countryId)!, height: 200),
                   Padding(
                     padding: const EdgeInsets.all(20),
                     child: Column(

@@ -40,7 +40,7 @@ class HistoraApp extends StatelessWidget {
                 // pekat supaya teks putih tetap terbaca di area foto yang terang.
                 colors: s.dark
                     ? const [Color(0xC4041827), Color(0xAA041827)]
-                    : const [Color(0xCCEAF4F8), Color(0xBDDCEBF1)],
+                        : const [Color(0x73EAF4F8), Color(0x66DCEBF1)],
               ),
             ),
           ),

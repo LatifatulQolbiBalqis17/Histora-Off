@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../data/local_repository.dart';
 import '../data/models.dart';
-
+import '../data/flag_index.dart';
+import '../data/places_index.dart';
+import '../data/food_index.dart';
 class AppState extends ChangeNotifier {
   AppState(this.repo);
   final LocalRepository repo;
@@ -15,7 +17,10 @@ class AppState extends ChangeNotifier {
     final p = await SharedPreferences.getInstance();
     dark = p.getBool('dark') ?? false;
     onboardingDone = p.getBool('onboarding') ?? false;
-    countries = await repo.countries();
+      countries = await repo.countries();
+    await FlagIndex.build(countries);
+        await PlaceIndex.build();
+            await FoodIndex.build();
     questions = await repo.questions();
     favorites = await repo.favorites();
     history = await repo.history();

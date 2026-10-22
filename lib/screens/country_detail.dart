@@ -4,10 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:share_plus/share_plus.dart';
 
+import '../data/flag_index.dart';
 import '../data/models.dart';
+import '../data/places_index.dart';
 import '../state/app_state.dart';
 import '../widgets/common.dart';
 import 'quiz_screens.dart';
+import '../data/food_index.dart';
 
 class CountryDetail extends StatefulWidget {
   const CountryDetail({super.key, required this.country});
@@ -67,9 +70,25 @@ class _CountryDetailState extends State<CountryDetail>
               background: Stack(
                 fit: StackFit.expand,
                 children: [
-                  AssetPicture(country.heroImage, height: 250),
-                  // Kerudung atas & bawah: judul, ikon, dan tab tetap terbaca
-                  // di atas foto hero apa pun.
+                                    Builder(
+                    builder: (_) {
+                      final photo = PlaceIndex.photoFor(country.id);
+                      return Image.asset(
+                        photo ?? country.heroImage,
+                        width: double.infinity,
+                        height: 250,
+                        fit: BoxFit.cover,
+                        errorBuilder: (_, __, ___) => Image.asset(
+                          FlagIndex.resolve(country.flagImage),
+                          width: double.infinity,
+                          height: 250,
+                          fit: BoxFit.cover,
+                          errorBuilder: (_, __, ___) =>
+                              AssetPicture('', height: 250),
+                        ),
+                      );
+                    },
+                  ),
                   DecoratedBox(
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
@@ -241,40 +260,49 @@ class _Places extends StatelessWidget {
   const _Places(this.country);
   final Country country;
   @override
-  Widget build(BuildContext context) => country.places.isEmpty
-      ? const _MissingContent(icon: Icons.landscape_outlined, label: 'Tempat')
-      : _Pad(
-    Column(
-      children: country.places
-          .map(
-            (place) => Card(
-              clipBehavior: Clip.antiAlias,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  AssetPicture(place.image),
-                  Padding(
-                    padding: const EdgeInsets.all(14),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          place.name,
-                          style: Theme.of(context).textTheme.titleLarge,
-                        ),
-                        Text(place.city),
-                        const SizedBox(height: 6),
-                        Text(place.description),
-                      ],
+  Widget build(BuildContext context) {
+    final items = PlaceIndex.itemsFor(country);
+    if (items.isEmpty) {
+      return const _MissingContent(
+        icon: Icons.landscape_outlined,
+        label: 'Tempat',
+      );
+    }
+    return _Pad(
+      Column(
+        children: items
+            .map(
+              (place) => Card(
+                clipBehavior: Clip.antiAlias,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    AssetPicture(place.image),
+                    Padding(
+                      padding: const EdgeInsets.all(14),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            place.name,
+                            style: Theme.of(context).textTheme.titleLarge,
+                          ),
+                          if (place.city.isNotEmpty) Text(place.city),
+                          if (place.description.isNotEmpty) ...[
+                            const SizedBox(height: 6),
+                            Text(place.description),
+                          ],
+                        ],
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-          )
-          .toList(),
-    ),
-  );
+            )
+            .toList(),
+      ),
+    );
+  }
 }
 
 class _Culture extends StatelessWidget {
@@ -304,40 +332,50 @@ class _Foods extends StatelessWidget {
   const _Foods(this.country);
   final Country country;
   @override
-  Widget build(BuildContext context) => country.foods.isEmpty
-      ? const _MissingContent(icon: Icons.restaurant_outlined, label: 'Makanan')
-      : _Pad(
-    Column(
-      children: country.foods
-          .map(
-            (food) => Card(
-              clipBehavior: Clip.antiAlias,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  AssetPicture(food.image, icon: Icons.restaurant),
-                  Padding(
-                    padding: const EdgeInsets.all(14),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          food.name,
-                          style: Theme.of(context).textTheme.titleLarge,
-                        ),
-                        Text('Bahan utama: ${food.ingredients}'),
-                        const SizedBox(height: 6),
-                        Text(food.description),
-                      ],
+  Widget build(BuildContext context) {
+    final items = FoodIndex.itemsFor(country);
+    if (items.isEmpty) {
+      return const _MissingContent(
+        icon: Icons.restaurant_outlined,
+        label: 'Makanan',
+      );
+    }
+    return _Pad(
+      Column(
+        children: items
+            .map(
+              (food) => Card(
+                clipBehavior: Clip.antiAlias,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    AssetPicture(food.image, icon: Icons.restaurant),
+                    Padding(
+                      padding: const EdgeInsets.all(14),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            food.name,
+                            style: Theme.of(context).textTheme.titleLarge,
+                          ),
+                          if (food.ingredients.isNotEmpty)
+                            Text('Bahan utama: ${food.ingredients}'),
+                          if (food.description.isNotEmpty) ...[
+                            const SizedBox(height: 6),
+                            Text(food.description),
+                          ],
+                        ],
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-          )
-          .toList(),
-    ),
-  );
+            )
+            .toList(),
+      ),
+    );
+  }
 }
 
 class _Facts extends StatefulWidget {

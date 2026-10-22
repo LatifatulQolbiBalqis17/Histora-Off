@@ -7,7 +7,7 @@ import '../widgets/common.dart';
 import 'country_detail.dart';
 import 'explore_screen.dart';
 import 'quiz_screens.dart';
-
+import '../data/places_index.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -117,7 +117,15 @@ class HomeScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  AssetPicture(featured.heroImage, height: 180),
+                  Builder(
+  builder: (context) {
+    final photo = PlaceIndex.photoFor(featured.id);
+    return AssetPicture(
+      photo ?? featured.heroImage,
+      height: 180,
+    );
+  },
+),
                   Padding(
                     padding: const EdgeInsets.all(18),
                     child: Row(

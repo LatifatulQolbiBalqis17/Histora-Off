@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../core/theme/app_theme.dart';
+import '../data/flag_index.dart';
 
 class BrandMark extends StatelessWidget {
   const BrandMark({super.key, this.compact = false});
@@ -21,9 +22,10 @@ class BrandMark extends StatelessWidget {
       Text(
         'HISTORA',
         style: Theme.of(c).textTheme.titleLarge?.copyWith(
-          letterSpacing: 2,
-          fontWeight: FontWeight.w800,
-        ),
+  fontFamily: 'Cinzel',
+  letterSpacing: 3,
+  fontWeight: FontWeight.w700,
+),
       ),
     ],
   );
@@ -92,18 +94,19 @@ class CountryFlag extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+        final path = FlagIndex.resolve(imagePath);
     final fallback = Center(
       child: Text(emoji.isEmpty ? '🌍' : emoji, style: TextStyle(fontSize: height * .72)),
     );
     return SizedBox(
       width: width,
       height: height,
-      child: imagePath.isEmpty
+            child: path.isEmpty
           ? fallback
           : ClipRRect(
               borderRadius: BorderRadius.circular(4),
               child: Image.asset(
-                imagePath,
+                path,
                 fit: BoxFit.contain,
                 errorBuilder: (_, __, ___) => fallback,
               ),

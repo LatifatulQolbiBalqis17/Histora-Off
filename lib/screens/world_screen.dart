@@ -12,6 +12,8 @@ import '../data/models.dart';
 import '../state/app_state.dart';
 import '../widgets/common.dart';
 import 'country_detail.dart';
+import '../data/flag_index.dart';
+import '../data/places_index.dart';
 
 // =========================================================
 // HISTORA World — Globe 3D fotorealistik.
@@ -260,40 +262,11 @@ class _WorldScreenState extends State<WorldScreen>
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  'JELAJAHI\nDUNIA',
-                  style: TextStyle(
-                    color: HistoraColors.pearl,
-                    fontSize: 34,
-                    height: 1.05,
-                    fontWeight: FontWeight.w900,
-                    letterSpacing: 1.5,
-                    shadows: const [
-                      Shadow(
-                        color: Color(0xAA02101E),
-                        blurRadius: 12,
-                        offset: Offset(0, 3),
-                      ),
-                    ],
-                  ),
-                ),
-                const SizedBox(height: 8),
-                Text(
-                  'Putar globe dan ketuk wilayah negara\nuntuk melihat profilnya.',
-                  style: TextStyle(
-                    color: const Color(0xFF7FE7F2),
-                    fontSize: 14,
-                    height: 1.35,
-                    fontWeight: FontWeight.w600,
-                    shadows: const [
-                      Shadow(
-                        color: Color(0xAA02101E),
-                        blurRadius: 8,
-                        offset: Offset(0, 2),
-                      ),
-                    ],
-                  ),
-                ),
+                SizedBox(
+  width: double.infinity,
+ 
+),
+                
                 const SizedBox(height: 8),
                 Expanded(
                   child: LayoutBuilder(
@@ -363,7 +336,7 @@ class _WorldScreenState extends State<WorldScreen>
                       ),
                       const SizedBox(width: 8),
                       Text(
-                        'Globe interaktif • ketuk negara untuk membuka',
+                        'Putar globe dan ketuk wilayah negara\nuntuk melihat profilnya.',
                         style: TextStyle(
                           color: const Color(0xFFFFD866),
                           fontSize: 13,
@@ -466,7 +439,19 @@ class _CountryPreview extends StatelessWidget {
               const SizedBox(height: 14),
               ClipRRect(
                 borderRadius: BorderRadius.circular(14),
-                child: AssetPicture(c.heroImage, height: 150),
+                child: Image.asset(
+  PlaceIndex.photoFor(c.id) ?? c.heroImage,
+  width: double.infinity,
+  height: 150,
+  fit: BoxFit.cover,
+  errorBuilder: (_, __, ___) => Image.asset(
+    FlagIndex.resolve(c.flagImage),
+    width: double.infinity,
+    height: 150,
+    fit: BoxFit.cover,
+    errorBuilder: (_, __, ___) => AssetPicture('', height: 150),
+  ),
+),
               ),
             ],
             const SizedBox(height: 14),
@@ -483,11 +468,11 @@ class _CountryPreview extends StatelessWidget {
             if (c != null && c.places.isNotEmpty) ...[
               const SizedBox(height: 14),
               Text(
-                'Dua Tempat Terkenal',
+                'Tempat Terkenal',
                 style: theme.textTheme.titleLarge?.copyWith(fontSize: 16),
               ),
               const SizedBox(height: 6),
-              ...c.places
+              ...PlaceIndex.itemsFor(c)
                   .take(2)
                   .map(
                     (p) => Padding(

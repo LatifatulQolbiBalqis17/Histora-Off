@@ -28,7 +28,29 @@ class _AppShellState extends State<AppShell> {
   @override
   Widget build(BuildContext context) => Scaffold(
     appBar: AppBar(
-      title: const Text('HISTORA'),
+      title: Row(
+  mainAxisSize: MainAxisSize.min,
+  children: [
+    Image.asset(
+      'assets/images/logo.png',
+      height: 28,
+      errorBuilder: (_, __, ___) => Icon(
+        Icons.public,
+        size: 28,
+        color: Theme.of(context).colorScheme.secondary,
+      ),
+    ),
+    const SizedBox(width: 10),
+    const Text(
+  'HISTORA',
+  style: TextStyle(
+    fontFamily: 'Cinzel',
+    fontWeight: FontWeight.w700,
+    letterSpacing: 3,
+  ),
+),
+  ],
+),
       actions: [
         IconButton(
           tooltip: 'Pengaturan',
